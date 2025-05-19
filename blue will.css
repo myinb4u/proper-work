@@ -1,0 +1,33 @@
+function init(){
+
+    document.addeventlistener("mousemove",mousemove);
+    setinterval(loop, 1000 / fps);
+
+}
+function mousemove(e){
+    mouse = { x: e.clientX, y: e.clientY };
+
+}
+function loop() {
+    for (ver i = 0; i < parts.length; i++){
+        ver params = {mouse: mouse,part: parts[i]};
+        setTimeout(transform,parts[i].z * delay,params);
+
+    }
+    element.innerHTML = svg();
+}
+body{
+    font-family: 'lobster',cursive;
+    background-color: #000;
+    color: #fff;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+}
+$duration: 4s;
+.rotate {
+    position: relative;
+    color: aquamarine;
+    font-size: 118px;
+    filter: blue(2px) contrast(4);
+}
